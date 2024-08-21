@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
+  <title>Message Board</title>
 </head>
 <body>
   <h1>Message Board</h1>
@@ -13,8 +13,11 @@
         <strong><%= message.user %></strong> said: "<%= message.text %>"
         <br>
         <small>on <%= message.added.toDateString() %></small>
+        <br>
+        <a href="/message/<%= message.id %>">Open</a>
       </li>
     <% }); %>
   </ul>
+  <a href="/new">Add a New Message</a>
 </body>
 </html>
