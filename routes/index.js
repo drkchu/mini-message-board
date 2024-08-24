@@ -1,27 +1,10 @@
 const express = require('express');
 const router = express.Router();
-
-const messages = [
-    {
-      text: "Hi there!",
-      user: "David",
-      added: new Date(),
-      id: 1
-    },
-    {
-      text: "Hello World!",
-      user: "Diana",
-      added: new Date(),
-      id: 2
-    }
-  ];
-
-let nextId = 3;
+const db = require("../db/queries");
+const usernamesController = require("../controllers/usernamesController");
 
 // Home route
-router.get('/', (req, res) => {
-    res.render('index', {messages: messages, title: 'Home'});
-});
+router.get('/', usernamesController.getMessages);
 
 // New message route
 router.get('/new', (req, res) => {

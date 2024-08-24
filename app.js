@@ -1,3 +1,5 @@
+require('dotenv').config(); // To set up environment variables
+
 const express = require('express');
 const path = require('path');
 
